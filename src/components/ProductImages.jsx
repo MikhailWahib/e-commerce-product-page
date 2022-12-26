@@ -7,10 +7,17 @@ import thumb1 from '../assets/images/image-product-1-thumbnail.jpg'
 import thumb2 from '../assets/images/image-product-2-thumbnail.jpg'
 import thumb3 from '../assets/images/image-product-3-thumbnail.jpg'
 import thumb4 from '../assets/images/image-product-4-thumbnail.jpg'
+import arrow from '../assets/images/icon-next.svg'
 
 const ProductImages = () => {
     return (
         <div className='product-imgs-container'>
+            {/* mobile arrows */}
+            <div className="mobile-arrows-container">
+                <button className="arrow"><img src={arrow} className='back-arrow' /></button>
+                <button className="arrow"><img src={arrow} /></button>
+            </div>
+            {/* mobile arrows */}
             <div className="main-img-wrapper">
                 <img src={img1} alt="product image" className='main-img' />
             </div>
