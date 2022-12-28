@@ -127,6 +127,7 @@ header {
     border-radius: .4rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
     background-color: white;
+    animation: .5s alternate fadeToTop;
 }
 
 .cart-title {
@@ -238,12 +239,22 @@ main {
 
 .thumbnail-btn {
     border-radius: .5rem;
+    transition: all .4s;
 }
 
 .thumbnail-btn img {
     width: 10vw;
     max-width: 70px;
     border-radius: inherit;
+}
+
+.thumbnail-btn:hover {
+    opacity: .8;
+}
+
+.thumbnail-btn:active {
+    transform: scale(.95);
+    opacity: .7;
 }
 
 .product-details-container {
@@ -346,12 +357,24 @@ main {
 
 .arrow {
     background-color: white;
-    padding: .6rem .9rem;
+    padding: .4rem .7rem;
     border-radius: 50%;
 }
 
 .back-arrow {
     transform: rotate(180deg);
+}
+
+@keyframes fadeToTop {
+    from {
+        opacity: 0;
+        top: 6rem;
+    }
+    
+    to {
+        opacity: 1;
+        top: 5rem;
+    }
 }
 
 
@@ -414,6 +437,10 @@ main {
         top: 9rem;
         right: 17vw;
         transform: scale(1.5);
+    }
+
+    .empty-cart {
+        font-size: .7rem;
     }
 
     main {
@@ -486,6 +513,18 @@ main {
         
         to {
             left: 0;
+        }
+    }
+
+    @keyframes fadeToTop {
+        from {
+            opacity: 0;
+            top: 10rem;
+        }
+        
+        to {
+            opacity: 1;
+            top: 9rem;
         }
     }
 }
