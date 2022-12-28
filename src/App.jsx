@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import NavBar from './components/NavBar'
 import ProductImages from './components/ProductImages'
@@ -12,6 +12,7 @@ function App() {
     <div className="App">
       <NavBar
         productCount={productCount}
+        setProductCount={setProductCount}
       />
       <main>
         <ProductImages />

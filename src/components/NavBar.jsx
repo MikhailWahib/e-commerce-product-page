@@ -1,17 +1,20 @@
 import { useState } from 'react'
+import Cart from './Cart'
 import logo from '../assets/images/logo.svg'
 import cartIcon from '../assets/images/icon-cart.svg'
 import avatar from '../assets/images/image-avatar.png'
 import toggleIcon from '../assets/images/icon-menu.svg'
 import closeIcon from '../assets/images/icon-close.svg'
 
-const NavBar = ({ productCount }) => {
+const NavBar = ({ productCount, setProductCount }) => {
 
     const [showMenu, setShowMenu] = useState(false);
+    const [showCart, setShowCart] = useState(false)
 
     const handleMenuClick = () => {
         setShowMenu(!showMenu);
     }
+
 
     return (
         <header>
@@ -33,7 +36,7 @@ const NavBar = ({ productCount }) => {
                     </ul>
                 </div>
                 <div className="nav-right-sec">
-                    <button className="cart-btn">
+                    <button className="cart-btn" onClick={() => setShowCart(!showCart)}>
                         <img src={cartIcon} alt="cart" />
                         {
                             productCount > 0 &&
@@ -43,6 +46,13 @@ const NavBar = ({ productCount }) => {
                     <div className="avatar"><img src={avatar} alt="avatar" /></div>
                 </div>
             </nav>
+            {
+                showCart &&
+                <Cart
+                    productCount={productCount}
+                    setProductCount={setProductCount}
+                />
+            }
         </header >
     )
 }

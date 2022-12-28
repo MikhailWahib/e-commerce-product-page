@@ -78,6 +78,7 @@ header {
 }
 
 .nav-right-sec {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -112,8 +113,97 @@ header {
     border-radius: 1rem;
     font-size: .7rem;
     font-weight: 700;
-    top: -.7rem;
-    left: .5rem;
+    top: -.8rem;
+    left: .8rem;
+}
+
+.cart {
+    position: absolute;
+    top: 5rem;
+    right: 3rem;
+    height: 190px;
+    width: 270px;
+    padding: 1rem;
+    border-radius: .4rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    background-color: white;
+}
+
+.cart-title {
+    text-align: start;
+    font-weight: 700;
+    font-size: .85rem;
+    margin-bottom: .5rem;
+}
+
+.cart hr {
+    border-top: .1px solid black;
+    opacity: .15;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    margin: 1.3rem 0;
+}
+
+.cart-img {
+    width: 45px;
+    border-radius: .2rem;
+}
+
+.cart-item-details {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cart-item-details p {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 300;
+    opacity: .5;
+    margin-left: 1rem;
+}
+
+.cart-item-details span {
+    font-weight: 700;
+    font-size: .9rem;
+    margin-left: .5rem;
+}
+
+.cart-delete-btn {
+    margin-left: auto;
+}
+
+.checkout-btn {
+    background-color: rgb(255, 125, 26);
+    color: rgb(255, 255, 255, .9);
+    font-weight: 700;
+    font-size: .8rem;
+    width: 100%;
+    height: 25%;
+    border-radius: .5rem;
+    box-shadow: rgba(255, 125, 26, 0.2) 0px 8px 24px;
+    transition: ease .5s;
+}
+
+.checkout-btn:active {
+    transform: scale(.9);
+    background-color: hsl(26, 100%, 50%);
+}
+
+.checkout-btn:hover {
+    box-shadow: rgba(255, 125, 26, 0.6) 0px 8px 24px;
+}
+
+.empty-cart {
+    text-align: center;
+    margin-top: 20%;
+    font-size: .85rem;
+    font-weight: 700;
+    opacity: .5;
 }
 
 main {
@@ -242,7 +332,7 @@ main {
 }
 
 .add-to-cart-btn:active {
-    transform: scale(.8);
+    transform: scale(.9);
     background-color: hsl(26, 100%, 50%);
 }
 
@@ -274,7 +364,7 @@ main {
 
     .navbar {
         width: 100%;
-        padding: 1.5rem 2rem;
+        padding: 1rem 2rem;
     }
     
     .nav-links-list-container {
@@ -320,6 +410,12 @@ main {
         display: block;
     }
     
+    .cart {
+        top: 9rem;
+        right: 17vw;
+        transform: scale(1.5);
+    }
+
     main {
         min-height: 100vh;
         flex-direction: column;
@@ -391,6 +487,14 @@ main {
         to {
             left: 0;
         }
+    }
+}
+
+@media (max-width: 425px) {
+    .cart {
+        width: 65vw;
+        top: 9rem;
+        right: 17.5vw;
     }
 }
 
